@@ -2,58 +2,59 @@ package ver2;
 
 public class Account {
 	// Instance variable, only available inside this class
+	// Test Comment
 	private double balance;
 	private String name;
-	
-	
+
+
 	// Constructor
 	public Account(double balance) {
 		this("Unknown", balance);
 	}
-	
+
 	public Account(String name, double balance) {
 		this.name = name;
 		this.balance = balance;
 	}
-	
+
 	// A "getter" method that simply returns the balance
 	public double getBalance() {
 		return balance;
 	}
-	
+
 	// A method that increases the balance by amount
 	public void deposit(double amount) {
 		if(amount > 0) {
 			balance += amount;
 		}
 	}
-	
+
 	public void withdraw(double amount) {
 		if(amount > 0) {
 			balance -= amount;
 		}
 	}
-	
+
 	public void mergeAccount(Account a) {
 		if(this.getName().equals(a.getName())) {
 			this.balance += a.getBalance();
 		}
 	}
-	
+
 	public String getName() {
 		return name;
 	}
-	
+
 	public void setName(String name) {
 		this.name = name;
 	}
-	
+
 	@Override
 	public String toString() {
 		String msg = "name=" + name + "balance=$" + balance;
 		return msg;
 	}
-	
+
 	// Informal test code
 	public static void main(String[] args) {
 		Account a1 = new Account(1000.0);
